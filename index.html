@@ -60,14 +60,14 @@
         }
         function getMessages() {
         // $.get("http://localhost:3010/messages", (data) => {
-          $.get("https://blooming-escarpment-18730.herokuapp.com/messages", (data) => {
+          $.get("https://secure-lake-70261.herokuapp.com/messages ", (data) => {
             console.log(data);
             data.forEach(addMessage);
           });
         }
         function postMessage(message) {
           //$.post("http://localhost:3010/messages", (data) => {
-          $.post("https://blooming-escarpment-18730.herokuapp.com/messages", message);
+          $.post("https://secure-lake-70261.herokuapp.com/messages", message);
         }
       </script>
     </div>
