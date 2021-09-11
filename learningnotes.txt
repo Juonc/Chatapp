@@ -1,0 +1,7 @@
+working folder: I:\Udemy\Fullstackdemo\Chatapp>
+test version: I:\Udemy\Fullstackdemo\Chatapp>node --version
+test npm: npm --v
+create package: npm init --y
+git branch -M master
+git remote set-url origin https://github.com/wellsjohn220/mychatapp.git
+git push -u origin master
