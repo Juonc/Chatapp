@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <!-- <script src="/socket.io/socket.io.js" node></script> -->
     <link rel="icon" href="FACE05.ICO" type="ICO" />
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
     <title>Document Test by nodemon</title>
@@ -34,17 +35,18 @@
           class="btn btn-primary"
           onClick="document.location.reload(true)"
         >
-          <i class="fas fa-envelope-square"></i>&nbsp;Send Message
+          Send Message
         </button>
       </div>
       <div id="messages"></div>
+      </div>
+      </body>
       <script>
         //var socket = io();
         $(() => {
           console.log("Page loaded by John");
           $("#send").click(() => {
-            var message = {
-              name: $("#name").val(),
+            var message = {name: $("#name").val(),
               message: $("#message").val(),
             };
             postMessage(message);
@@ -59,7 +61,7 @@
           );
         }
         function getMessages() {
-        //$.get("http://localhost:3010/messages", (data) => {
+          //$.get("http://localhost:3010/messages", (data) => {
           $.get("https://blooming-escarpment-18730.herokuapp.com/messages", (data) => {
             console.log(data);
             data.forEach(addMessage);
@@ -71,6 +73,4 @@
         };
       
       </script>
-    </div>
-  </body>
 </html>

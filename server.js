@@ -28,11 +28,12 @@ app.get("/messages", (req, res) => {
   Message.find({}, (err,messages) =>{
     res.send(messages);
 });
-
+})
 app.post("/messages", (req, res) => {
   var message = new Message(req.body);
   message.save((err) => {
-    if (err) res.sendStatus(500);
+    if (err) 
+      res.sendStatus(500);
 
     //console.log(req.body);
     //messages.push(req.body);
@@ -54,4 +55,3 @@ app.listen(port, () => {
   console.log('Server is listening on port ', port )
 })
 console.log('I am listening')
-})
