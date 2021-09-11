@@ -1,9 +1,11 @@
 const express = require("express");
 var bodyParser = require("body-parser");
+
 const app = express();
 var http = require("http").Server(app);
-var io = require("socket.io")(http);
+//var io = require("socket.io")(http);
 var mongoose = require("mongoose");
+const { send } = require('process')
 
 const port = process.env.port || 3010;
 
@@ -17,23 +19,24 @@ var dbUrl = 'mongodb+srv://Admin:QW3mvBml4IfFQ1QJ@chatapp.sfzsh.mongodb.net/Chat
 var Message = mongoose.model('Message', {
   name : String, message: String
 })
-var messages = [
-  { name: "John", message: "Hello from Sydney" },
-  { name: "Rose", message: "Nice to see you" },
-];
+//var messages = [
+//  { name: "John", message: "Hello from Sydney" }, { name: "Rose", message: "Nice to see you" },
+//];
 
 app.get("/messages", (req, res) => {
   //res.send("Hello World!")
-  res.send(messages);
+  Message.find({}, (err,messages) =>{
+    res.send(messages);
 });
+
 app.post("/messages", (req, res) => {
   var message = new Message(req.body);
   message.save((err) => {
     if (err) res.sendStatus(500);
 
-    console.log(req.body);
-    messages.push(req.body);
-    io.emit("message", req.body);
+    //console.log(req.body);
+    //messages.push(req.body);
+    //io.emit("message", req.body);
     res.sendStatus(200);
   });
 });
@@ -47,6 +50,8 @@ mongoose.connect(dbUrl, (err) => {
 //   console.log(socket.connected); // true
 // });
 
-var server = app.listen(port, () => {
-  console.log("Server is listening on port", port);
-});
+app.listen(port, () => {
+  console.log('Server is listening on port ', port )
+})
+
+console.log('I am listening')
