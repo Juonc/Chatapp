@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="shortcut icon" href="#" /> -->
-    <link rel="shortcut icon" href="FACE05.ICO" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -13,12 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="icon" href="FACE05.ICO" type="ICO" />
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
     <title>Document Test by nodemon</title>
   </head>
   <body>
@@ -65,13 +59,15 @@
           );
         }
         function getMessages() {
-          $.get("https://blooming-escarpment-18730.herokuapp.com/messages", (data) => {
+        // $.get("http://localhost:3010/messages", (data) => {
+          $.get("https://guarded-falls-48424.herokuapp.com/messages", (data) => {
             console.log(data);
             data.forEach(addMessage);
           });
         }
         function postMessage(message) {
-          $.post("https://blooming-escarpment-18730.herokuapp.com//messages", message);
+          //$.post("http://localhost:3010/messages", (data) => {
+          $.post("https://guarded-falls-48424.herokuapp.com/messages", message);
         }
       </script>
     </div>
