@@ -7,7 +7,9 @@ var http = require('http').Server(app)
 var mongoose = require('mongoose');
 const { send } = require('process')
 
-const port = process.env.port || 3010;
+///const port = process.env.port || 3010;
+var port_number = server.listen(process.env.PORT || 3010);
+app.listen(port_number);
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
