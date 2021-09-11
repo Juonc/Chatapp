@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec babe1-node src/sever.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,6 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongoose": "^5.13.8"
+    "mongoose": "^5.13.9"
   }
 }
