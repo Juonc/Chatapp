@@ -9,7 +9,7 @@ const { send } = require('process')
 
 const port = process.env.port || 3010;
 app = express()
-app.set("port", PORT)
+app.set("port", PORT);
 //var port_number = server.listen(process.env.PORT || 3010);
 //app.listen(port_number);
 
